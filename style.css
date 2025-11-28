@@ -1,0 +1,185 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.c1 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('Frame 1.jpg');
+  background-size: cover;       /* Faz a imagem preencher toda a tela */
+  background-position: center;  /* Centraliza a imagem */
+  background-repeat: no-repeat; /* Impede que repita */
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.teste {
+    text-align: center;
+    margin-top: 0px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700; /* 400 = Regular */
+    margin-bottom: 0;
+    font-size: 68px;
+    color: white;
+     margin-bottom: 5px; 
+}
+
+.teste2{
+    text-align: center;
+    font-size: 28px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    margin-top: -20px; 
+    color: white;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column; /* coloca os elementos um abaixo do outro */
+  gap: 15px; /* espaço entre os campos */
+  padding: 30px;
+  width: 300px;
+  border-radius: 22px;
+  background: rgba(217, 217, 217, 0.58);
+  backdrop-filter: blur(17.15px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.formulario input,
+.formulario textarea {
+  padding: 20px;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+}
+
+.formulario button {
+  color: #FFF;
+  text-align: center;
+  font-family: Poppins, sans-serif;
+  font-size: 18px;        /* diminui o tamanho da fonte */
+  font-weight: 700;
+  padding: 15px 40px;     /* reduz o espaçamento interno */
+  border-radius: 20px;
+  border: 1px solid #FFF1F1;
+  background: linear-gradient(90deg, #FF8249 0%, #F04D02 100%);
+  cursor: pointer;
+  margin: 0 auto;         /* centraliza horizontalmente */
+  display: block;         /* garante que o margin funcione */
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.formulario button:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+.botao-cadastro {
+  margin-top: 25px;               /* espaçamento superior */
+  padding: 15px 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;             /* centraliza */
+  
+  background: #ffffff;            /* AZUL */
+  border: none;
+  
+  color: rgb(0, 0, 0);
+  font-family: Poppins, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.botao-cadastro:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* Fundo escurecido */
+.popup {
+    display: none; /* começa escondido */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+}
+
+/* Caixa do popup */
+/* Caixa interna do popup */
+.popup-content {
+    background: #fff;
+    padding: 30px;
+    width: 380px;
+    border-radius: 12px;
+    position: relative;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+/* Título centralizado */
+.titulo-popup {
+    text-align: center;
+    font-family: Poppins, sans-serif;
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+/* Formulário dentro do popup: alinhado em coluna */
+.form-popup {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* espaço entre inputs */
+}
+
+/* Inputs do popup */
+.form-popup input {
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    font-family: Poppins, sans-serif;
+}
+
+/* Botão do popup */
+.btn-cadastrar {
+    padding: 12px;
+    background: #007bff;            /* azul */
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.btn-cadastrar:hover {
+    opacity: .9;
+}
+
+
+/* Botão X */
+.fechar {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+    font-size: 22px;
+}

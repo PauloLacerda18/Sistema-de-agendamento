@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lista de avisos</title>
+
+  <link rel="stylesheet" href="painel.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="logo">Agenda de avisos</div>
+    <div class="user-area">
+      <span>Bem-vindo(a)!</span>
+      <button id="btnSair">Sair</button>
+    </div>
+  </header>
+
+  <!-- MENU PRINCIPAL -->
+  <nav class="menu-principal">
+    <ul>
+      <li><a href="painel.html">Cadastrar aviso</a></li>
+      <li><a href="avisos.html" class="ativo">Lista de avisos</a></li>
+    </ul>
+  </nav>
+
+  <main class="container container-avisos">
+    <section class="card card-aviso-lista">
+      <h2 style="display:flex;justify-content:space-between;align-items:center;">
+        Lista de avisos
+        <a href="painel.html"
+           class="btn-secundario"
+           style="text-decoration:none;padding:6px 12px;border-radius:8px;">
+          + Novo aviso
+        </a>
+      </h2>
+
+      <!-- FILTROS -->
+      <div class="filtros-avisos">
+        <div class="form-group">
+          <label for="buscaAvisos">Buscar</label>
+          <input
+            type="text"
+            id="buscaAvisos"
+            placeholder="Buscar por título ou conteúdo..."
+          />
+        </div>
+
+        <div class="filtros-linha">
+          <div class="form-group">
+            <label for="filtroStatus">Status</label>
+            <select id="filtroStatus">
+              <option value="">Todos</option>
+              <option value="publicado">Publicado</option>
+              <option value="rascunho">Rascunho</option>
+              <option value="suspenso">Suspenso</option>
+              <option value="cancelado">Cancelado</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Período (data de envio)</label>
+            <div class="form-inline">
+              <input type="date" id="filtroDataInicio" />
+              <input type="date" id="filtroDataFim" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TABELA DE AVISOS -->
+      <table id="tabelaAvisos">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Título</th>
+      <th>Prioridade</th>
+      <th>Data de envio</th>
+      <th>Destinatários</th>
+      <th>Status</th>
+      <th>Leitura</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- JS preenche aqui -->
+  </tbody>
+</table>
+
+
+      <!-- PAINEL RESUMO -->
+      <div class="painel-status">
+        <h3>Painel de status</h3>
+        <div class="status-cards">
+          <div class="status-card">
+            <span class="status-label">Total</span>
+            <span class="status-value" id="totalAvisos">0</span>
+          </div>
+          <div class="status-card">
+            <span class="status-label">Publicados</span>
+            <span class="status-value" id="totalPublicados">0</span>
+          </div>
+          <div class="status-card">
+            <span class="status-label">Rascunhos</span>
+            <span class="status-value" id="totalRascunhos">0</span>
+          </div>
+          <div class="status-card">
+            <span class="status-label">Suspensos</span>
+            <span class="status-value" id="totalSuspensos">0</span>
+          </div>
+          <div class="status-card">
+            <span class="status-label">Cancelados</span>
+            <span class="status-value" id="totalCancelados">0</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    O camarada · Agenda de avisos
+  </footer>
+
+  <script src="avisos.js"></script>
+</body>
+</html>

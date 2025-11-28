@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <script src="popup.js" defer></script>
+    <title>Sistema de avisos</title>
+</head>
+<body>
+
+<div class="c1">
+
+    <h1 class="teste">Seja bem vindo</h1>
+    <h2 class="teste2">Faça seu cadastro para acessar o sistema</h2>
+
+    <form class="formulario" action="Bancodedados/login.php" method="POST">
+        <input type="text" name="Nome" placeholder="Nome" required>
+        <input type="text" name="cpf" placeholder="CPF" required>
+        <input type="password" name="senha" placeholder="Senha" required>
+        <button type="submit" class="btn-entrar">Entrar</button>
+    </form>
+
+    <button id="btnCadastro" class="botao-cadastro">Criar conta</button>
+
+</div>
+
+
+<!-- POPUP -->
+<div id="popupCadastro" class="popup">
+    <div class="popup-content">
+        <span id="fecharPopup" class="fechar">&times;</span>
+
+       <form action="https://agendadeavisos.paulolacerdaweb.com.br/Bancodedados/cadastrar.php" 
+      method="POST" 
+      class="form-popup">
+            
+    <h2 class="titulo-popup">Cadastrar Usuário</h2>
+
+    <input type="text" name="nome" placeholder="Nome completo" required>
+    <input type="text" name="cpf" placeholder="CPF" required>
+    <input type="date" name="nascimento" required>
+    <input type="text" name="telefone" placeholder="Telefone" required>
+    <input type="password" name="senha" placeholder="Senha" required>
+
+    <button type="submit" class="btn-cadastrar">Cadastrar</button>
+</form>
+    </div>
+</div>
+
+</body>
+</html>

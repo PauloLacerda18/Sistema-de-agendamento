@@ -1,0 +1,718 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+body {
+  background: #f0f2f5;
+  color: #222;
+}
+
+/* Topo */
+.topbar {
+  background: #FF8246;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.user-area {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.user-area button {
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* ===== MENU PRINCIPAL ===== */
+
+.menu-principal {
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 0 24px;
+}
+
+.menu-principal ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 24px;
+}
+
+.menu-principal li {
+  margin: 0;
+}
+
+.menu-principal a {
+  display: block;
+  padding: 10px 0;
+  text-decoration: none;
+  color: #555;
+  font-weight: 500;
+  border-bottom: 3px solid transparent;
+}
+
+.menu-principal a:hover {
+  color: #111;
+  border-bottom-color: #FF8246; /* mesma cor do topo */
+}
+
+/* link da aba atual */
+.menu-principal a.ativo {
+  color: #111;
+  border-bottom-color: #FF8246;
+}
+
+/* Layout principal */
+.container {
+  max-width: 1100px;
+  margin: 40px auto;              /* antes era 150px */
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+/* ...resto igual... */
+
+.container-avisos {
+  margin-top: 40px;               /* pode ser 40 pra combinar */
+}
+
+
+.card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 16px 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.card h2 {
+  margin-bottom: 12px;
+}
+
+/* Formulário */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.form-group label {
+  font-size: 0.9rem;
+  margin-bottom: 3px;
+}
+
+.form-group input,
+.form-group select {
+  padding: 6px 8px;
+  border-radius: 6px;
+  border: 1px solid #d0d7de;
+}
+
+.form-inline {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+}
+
+.form-actions {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+button[type="submit"],
+.btn-secundario {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+button[type="submit"] {
+  background: #2563eb;
+  color: #fff;
+}
+
+button[type="submit"]:hover {
+  opacity: 0.9;
+}
+
+.btn-secundario {
+  background: #e5e7eb;
+}
+
+/* Mensagem */
+.mensagem {
+  margin-top: 8px;
+  font-size: 0.9rem;
+}
+
+/* Filtros / busca */
+.filtros {
+  margin-bottom: 8px;
+}
+
+.filtros input {
+  width: 100%;
+  padding: 6px 8px;
+  border-radius: 6px;
+  border: 1px solid #d0d7de;
+}
+
+/* Tabela */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+thead {
+  background: #f3f4f6;
+}
+
+th,
+td {
+  padding: 8px;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: left;
+}
+
+td:last-child {
+  white-space: nowrap;
+}
+
+.acao {
+  border: none;
+  border-radius: 6px;
+  padding: 4px 8px;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.acao.editar {
+  background: #fbbf24;
+}
+
+.acao.excluir {
+  background: #ef4444;
+  color: #fff;
+}
+
+.rodape {
+  text-align: center;
+  padding: 12px;
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+/* Responsivo - 2 colunas em telas maiores */
+@media (min-width: 900px) {
+  .container {
+    grid-template-columns: 1.1fr 1.3fr;
+  }
+}
+
+/* ===== AJUSTES PARA PÁGINA DE AVISOS ===== */
+
+.container-avisos {
+  margin-top: 120px;
+}
+
+/* Card da esquerda mais “seccionado” */
+.card-aviso-form h2,
+.card-aviso-lista h2 {
+  margin-bottom: 16px;
+}
+
+.section-block {
+  border-top: 1px solid #e5e7eb;
+  padding-top: 12px;
+  margin-top: 12px;
+}
+
+.section-block:first-of-type {
+  border-top: none;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+.section-block h3 {
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+  color: #4b5563;
+}
+
+/* Textarea com mesmo estilo do input */
+.form-group textarea {
+  padding: 6px 8px;
+  border-radius: 6px;
+  border: 1px solid #d0d7de;
+  resize: vertical;
+}
+
+/* Linha de checkboxes dos canais */
+.checkbox-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.9rem;
+}
+
+.checkbox-row label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Filtros específicos da lista de avisos */
+.filtros-avisos {
+  margin-bottom: 12px;
+}
+
+.filtros-linha {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 10px;
+}
+
+.filtros-linha .form-group {
+  margin-bottom: 0;
+}
+
+.filtros-linha .form-group input[type="date"] {
+  margin-top: 4px;
+}
+
+/* Badges de prioridade e status */
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.badge-alta {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.badge-pendente {
+  background: #fffbeb;
+  color: #92400e;
+}
+
+.badge-aprovado {
+  background: #ecfdf3;
+  color: #166534;
+}
+
+.badge-enviado {
+  background: #eff6ff;
+  color: #1d4ed8;
+}
+
+/* Ações da tabela de avisos */
+.acao.ver {
+  background: #e5e7eb;
+}
+
+.acao.aprovar {
+  background: #22c55e;
+  color: #fff;
+}
+
+.acao.rejeitar {
+  background: #ef4444;
+  color: #fff;
+}
+
+/* Painel de status (entregas / leitura) */
+.painel-status {
+  margin-top: 16px;
+}
+
+.painel-status h3 {
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+  color: #4b5563;
+}
+
+.status-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 10px;
+}
+
+.status-card {
+  background: #f9fafb;
+  border-radius: 8px;
+  padding: 8px 10px;
+  border: 1px solid #e5e7eb;
+}
+
+.status-label {
+  display: block;
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+.status-value {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+/* Ajuste em telas maiores: 2 colunas (já existe, mas aqui reforça o layout visual) */
+@media (min-width: 900px) {
+  .container-avisos {
+    grid-template-columns: 1.1fr 1.3fr;
+  }
+}
+
+/* ===== FORMULÁRIO MODERNO – UI UPGRADE ===== */
+
+.card {
+  transition: all 0.25s ease;
+}
+
+.card:hover {
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #333;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  transition: all 0.2s ease;
+  background-color: #fafafa;
+  border: 1.5px solid #e5e7eb;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  border-color: #FF8246;
+  background-color: #fff;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(255,130,70,0.15);
+}
+
+.form-section-title {
+  margin: 20px 0 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #444;
+  border-left: 4px solid #FF8246;
+  padding-left: 8px;
+}
+
+.form-inline {
+  margin-top: 4px;
+}
+
+textarea {
+  min-height: 90px;
+}
+
+/* ===== BOTÕES MODERNOS ===== */
+
+button[type="submit"] {
+  background: linear-gradient(to right, #FF8246, #ff6a20);
+  box-shadow: 0 4px 12px rgba(255,130,70,0.35);
+  transition: all 0.2s ease;
+}
+
+button[type="submit"]:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(255,130,70,0.45);
+}
+
+/* secundarios */
+.btn-secundario {
+  background: #f3f4f6;
+  transition: all 0.2s ease;
+}
+
+.btn-secundario:hover {
+  background: #e5e7eb;
+}
+
+/* ===== DEIXAR FORMULÁRIO COM “RESPIRO” ===== */
+
+.form-group {
+  margin-bottom: 14px;
+}
+
+.card h2 {
+  font-weight: 800;
+  letter-spacing: -0.4px;
+}
+
+/* ===== GRID MAIS BONITO ===== */
+
+.form-inline {
+  gap: 16px;
+}
+
+/* ===== PLACEHOLDERS MAIS SUAVES ===== */
+
+::placeholder {
+  color: #9ca3af;
+}
+
+/* ========================= */
+/*   LISTA DE AVISOS (UI)    */
+/* ========================= */
+
+/* Card principal da lista */
+/* ===== CENTRALIZAR LISTA DE AVISOS NO MEIO DA TELA ===== */
+
+/* main da página de avisos */
+.container-avisos {
+  /* ocupa praticamente a tela toda (desconta topo/rodapé) */
+  min-height: calc(100vh - 140px);
+  display: flex;
+  align-items: center;        /* centro vertical */
+  justify-content: center;    /* centro horizontal */
+}
+
+/* card maior e mais largo */
+.card-aviso-lista {
+  width: 100%;
+  max-width: 1200px;          /* aumenta a largura */
+  border-radius: 22px;
+  padding: 24px 28px 26px;
+}
+/* botão de novo aviso */
+.card-aviso-lista h2 a.btn-secundario {
+  background: #4c1d95;
+  color: #fff;
+  border-radius: 999px;
+  padding: 8px 18px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  box-shadow: 0 10px 25px rgba(76, 29, 149, 0.35);
+  transition: all 0.18s ease;
+}
+
+.card-aviso-lista h2 a.btn-secundario:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 30px rgba(76, 29, 149, 0.45);
+}
+
+/* ===== Filtros ===== */
+
+.filtros-avisos {
+  margin-bottom: 14px;
+}
+
+.filtros-avisos .form-group label {
+  font-weight: 600;
+  color: #374151;
+}
+
+#buscaAvisos {
+  width: 100%;
+  margin-top: 4px;
+}
+
+.filtros-linha {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: minmax(0, 220px) minmax(0, 1fr);
+  gap: 16px;
+}
+
+.filtros-linha .form-group {
+  margin-bottom: 0;
+}
+
+/* inputs e selects com estilo uniforme */
+.filtros-avisos input,
+.filtros-avisos select {
+  border-radius: 10px;
+  border: 1.5px solid #e5e7eb;
+  padding: 7px 10px;
+  background: #f9fafb;
+  font-size: 0.9rem;
+  transition: all 0.18s ease;
+}
+
+.filtros-avisos input:focus,
+.filtros-avisos select:focus {
+  outline: none;
+  border-color: #ff8246;
+  background: #fff;
+  box-shadow: 0 0 0 2px rgba(255, 130, 70, 0.15);
+}
+
+/* ===== Tabela ===== */
+
+#tabelaAvisos {
+  margin-top: 18px;
+  font-size: 0.9rem;
+}
+
+#tabelaAvisos thead {
+  background: #f3f4f6;
+}
+
+#tabelaAvisos th {
+  font-weight: 700;
+  color: #4b5563;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+
+.acao.whatsapp {
+  background: #22c55e;
+  color: #fff;
+}
+
+/* Badge para leitura */
+.badge-leitura-nao {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.badge-leitura-sim {
+  background: #dcfce7;
+  color: #166534;
+}
+
+/* ===== PRÉVIA DO AVISO (lado direito) ===== */
+
+.card-preview {
+  background: #0f172a;
+  color: #e5e7eb;
+  border-radius: 18px;
+  padding: 20px 22px 22px;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.35);
+}
+
+.card-preview h2 {
+  color: #f9fafb;
+}
+
+.preview-subtitle {
+  font-size: 0.85rem;
+  color: #9ca3af;
+  margin-bottom: 16px;
+}
+
+.preview-header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.preview-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* neutro (sem prioridade escolhida) */
+.preview-pill-neutro {
+  background: rgba(148, 163, 184, 0.18);
+  color: #e5e7eb;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+}
+
+/* cores por prioridade */
+.preview-pill-baixa {
+  background: rgba(34, 197, 94, 0.15);
+  color: #bbf7d0;
+  border: 1px solid rgba(34, 197, 94, 0.8);
+}
+
+.preview-pill-media {
+  background: rgba(59, 130, 246, 0.15);
+  color: #bfdbfe;
+  border: 1px solid rgba(59, 130, 246, 0.8);
+}
+
+.preview-pill-alta {
+  background: rgba(234, 179, 8, 0.18);
+  color: #fef9c3;
+  border: 1px solid rgba(234, 179, 8, 0.85);
+}
+
+.preview-pill-urgente {
+  background: rgba(248, 113, 113, 0.18);
+  color: #fecaca;
+  border: 1px solid rgba(248, 113, 113, 0.9);
+}
+
+.preview-status {
+  font-size: 0.78rem;
+  color: #9ca3af;
+}
+
+.preview-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: #f9fafb;
+}
+
+.preview-meta {
+  font-size: 0.8rem;
+  color: #9ca3af;
+  margin-bottom: 4px;
+}
+
+.preview-dest {
+  font-size: 0.8rem;
+  color: #9ca3af;
+  margin-bottom: 12px;
+}
+
+.preview-conteudo-wrapper {
+  background: rgba(15, 23, 42, 0.8);
+  border-radius: 12px;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  padding: 12px 12px 14px;
+}
+
+.preview-conteudo {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #e5e7eb;
+}
+
+/* Ajuste de grid para duas colunas em telas maiores */
+@media (min-width: 900px) {
+  .container {
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  }
+}
+
+

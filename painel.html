@@ -1,0 +1,169 @@
+<!-- painel.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Agenda de avisos - Cadastrar aviso</title>
+
+  <link rel="stylesheet" href="painel.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="logo">Agenda de avisos</div>
+    <div class="user-area">
+      <span>Bem-vindo(a)!</span>
+      <button id="btnSair">Sair</button>
+    </div>
+  </header>
+
+  <!-- MENU PRINCIPAL -->
+  <nav class="menu-principal">
+    <ul>
+      <li><a href="painel.html" class="ativo">Cadastrar aviso</a></li>
+      <li><a href="avisos.html">Lista de avisos</a></li>
+    </ul>
+  </nav>
+
+   <main class="container">
+    <!-- CARD CADASTRO -->
+    <section class="card card-aviso-form">
+      <h2>Cadastrar Aviso</h2>
+
+      <form id="formAviso">
+        <input type="hidden" id="idAviso" name="idAviso" />
+
+        <!-- DADOS PRINCIPAIS -->
+        <div class="section-block">
+          <h3>Dados principais</h3>
+
+          <div class="form-group">
+            <label for="titulo">Título</label>
+            <input type="text" id="titulo" name="titulo" required />
+          </div>
+
+          <div class="form-group">
+            <label for="conteudo">Conteúdo</label>
+            <textarea id="conteudo" name="conteudo" rows="4" required></textarea>
+          </div>
+
+          <div class="form-inline">
+            <div class="form-group">
+              <label for="prioridade">Prioridade</label>
+              <select id="prioridade" name="prioridade" required>
+                <option value="">Selecione...</option>
+                <option value="baixa">Baixa</option>
+                <option value="media">Média</option>
+                <option value="alta">Alta</option>
+                <option value="urgente">Urgente</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="status">Status</label>
+              <select id="status" name="status" required>
+                <option value="publicado">Publicar aviso</option>
+                <option value="rascunho">Salvar como rascunho</option>
+                <option value="suspenso">Suspenso</option>
+                <option value="cancelado">Cancelado</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- DATAS / HORÁRIO -->
+        <div class="section-block">
+          <h3>Data e horário de envio</h3>
+
+          <div class="form-inline">
+            <div class="form-group">
+              <label for="data_envio">Data de envio</label>
+              <input type="date" id="data_envio" name="data_envio" required />
+            </div>
+
+            <div class="form-group">
+              <label for="hora_envio">Hora de envio</label>
+              <input type="time" id="hora_envio" name="hora_envio" required />
+            </div>
+          </div>
+        </div>
+
+        <!-- DESTINATÁRIOS -->
+        <div class="section-block">
+          <h3>Destinatários</h3>
+
+          <div class="form-inline">
+            <div class="form-group">
+              <label for="grupo">Grupos</label>
+              <input type="text" id="grupo" name="grupo"
+                     placeholder="Ex.: Operacional, Administrativo" />
+            </div>
+
+            <div class="form-group">
+              <label for="cargo">Cargos</label>
+              <input type="text" id="cargo" name="cargo"
+                     placeholder="Ex.: Gerentes, Supervisores" />
+            </div>
+          </div>
+
+          <div class="form-inline">
+            <div class="form-group">
+              <label for="unidade">Unidades</label>
+              <input type="text" id="unidade" name="unidade"
+                     placeholder="Ex.: Matriz, Filial 1" />
+            </div>
+          </div>
+        </div>
+
+        <!-- AÇÕES -->
+        <div class="form-actions">
+          <button type="submit">Salvar aviso</button>
+          <button type="reset" class="btn-secundario">Limpar</button>
+        </div>
+
+        <p id="mensagem" class="mensagem"></p>
+      </form>
+    </section>
+
+    <!-- CARD PRÉVIA -->
+    <section class="card card-preview">
+      <h2>Prévia do aviso</h2>
+
+      <p class="preview-subtitle">
+        Veja como o aviso será apresentado para os colaboradores.
+      </p>
+
+      <div class="preview-header">
+        <span id="prevPrioridade" class="preview-pill preview-pill-neutro">
+          Prioridade não definida
+        </span>
+        <span id="prevStatus" class="preview-status">Status: Publicar aviso</span>
+      </div>
+
+      <h3 id="prevTitulo" class="preview-title">
+        Título do aviso
+      </h3>
+
+      <p id="prevMeta" class="preview-meta">
+        Data de envio não definida · Horário não definido
+      </p>
+
+      <p id="prevDestinatarios" class="preview-dest">
+        Destinatários: não definidos
+      </p>
+
+      <div class="preview-conteudo-wrapper">
+        <p id="prevConteudo" class="preview-conteudo">
+          Comece a preencher o formulário ao lado para visualizar a prévia do aviso.
+        </p>
+      </div>
+    </section>
+  </main>
+
+
+  <footer class="rodape">
+    O camarada · Agenda de avisos
+  </footer>
+
+  <script src="painel.js"></script>
+</body>
+</html>
